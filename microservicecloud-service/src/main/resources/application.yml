@@ -1,0 +1,43 @@
+server:
+  port: 8001
+  
+mybatis:
+  config-location: classpath:mybatis/mybatis.cfg.xml     #mybatis配置文件所在路徑
+  type-aliases-package: com.edison.cloud.entity          #所有Entity別名類所在package
+  mapper-locations: classpath:mybatis/mapper/**/*.xml    #mapper映射文件
+  
+spring:
+  profiles:    active: dev
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+  application:
+    name: microservicecloud-service
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver                #mysql驅動包
+    url: jdbc:mysql://127.0.0.1:3306/cloudDB01?useSSL=false #資料庫名稱，請自訂
+    username: root          #資料庫帳號，請自訂
+    password:  #資料庫密碼，請自訂
+    dbcp2:
+      min-idle: 5                                        #資料庫連接池的最小維持連接數
+      initial-size: 5                                    #初始化連接數
+      max-idle: 5                                        #最大連接數
+      max-wait-millis: 200                               #等待連接獲取最大超時時間
+eureka:
+  client:
+    register-with-eureka: true  #註冊到Eureka註冊中心
+    fetch-registry: true  #開啟檢索服務
+    service-url:
+      defaultZone: http://127.0.0.1:7001/eureka/    
+  instance:
+    instance-id: microservicecloud-service #status的默認名稱修改
+    prefer-ip-address: true #訪問路徑可以顯示IP地址
+    
+info: #Eureka中針對本服務端的信息描述
+  app:
+    name: edison-microservicecloud
+  company:
+    name: Edison
+  build:
+    artifactId: $project.artifactId$
+    version: $project.version$

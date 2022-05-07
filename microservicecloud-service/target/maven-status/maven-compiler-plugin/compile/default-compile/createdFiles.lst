@@ -1,0 +1,6 @@
+com\edison\cloud\config\SwaggerConfig.class
+com\edison\cloud\service\impl\DeptServiceImpl.class
+com\edison\cloud\DeptProvider.class
+com\edison\cloud\controller\DeptController.class
+com\edison\cloud\service\DeptService.class
+com\edison\cloud\dao\DeptDao.class

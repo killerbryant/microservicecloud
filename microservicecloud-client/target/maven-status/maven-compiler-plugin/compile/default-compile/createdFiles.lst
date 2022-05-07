@@ -1,0 +1,3 @@
+com\edison\cloud\controller\DeptClientController.class
+com\edison\cloud\DeptConsumer.class
+com\edison\cloud\cfgbeans\ConfigBean.class
